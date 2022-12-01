@@ -23,11 +23,6 @@
     "lint-staged": "lint-staged",
     "commit": "git-cz"
   },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "jira-prepare-commit-msg"
-    }
-  },
   "lint-staged": {
     "*.{css,less,scss,html,json,jsx,js}": [
       "prettier --write ."
