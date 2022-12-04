@@ -6,7 +6,7 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - /data/postgres:/data/postgres
+       - postgres:/var/lib/postgressql/data
     env_file:
       - docker.env
     networks:
@@ -20,7 +20,7 @@ services:
     ports:
       - '8080:80'
     volumes:
-      - /data/pgadmin:/root/.pgadmin
+     - pgadmin:/var/lib/pgadmin
     env_file:
       - docker.env
     networks:
@@ -29,3 +29,6 @@ services:
 networks:
   postgres:
     driver: bridge
+volumes:
+  postgres:
+  pgadmin:
