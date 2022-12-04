@@ -4,11 +4,11 @@ import * as path from 'path';
 
 const mikroOrmConfig: Options = {
   port: 5432,
-  user: 'postgres',
+  user: 'suntech',
   host: 'localhost',
   type: 'postgresql',
   dbName: 'qualilab',
-  password: 'suntech@nk5alp@PPP',
+  password: 'nk5alp@PPP@suntech@',
   entities: ['./dist//*.entity.js'],
   entitiesTs: ['./src//*.entity.ts'],
   metadataProvider: TsMorphMetadataProvider,
