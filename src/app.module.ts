@@ -7,6 +7,7 @@ import { AppService } from './app.service';
 import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';
+import { UnitsModule } from './units/units.module';
 
 import * as Joi from 'joi';
 
@@ -29,6 +30,7 @@ import * as Joi from 'joi';
       }),
     }),
     DatabaseModule,
+    UnitsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

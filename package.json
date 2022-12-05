@@ -30,7 +30,9 @@
     "*.{js,ts}": "eslint --fix"
   },
   "dependencies": {
+    "@mikro-orm/cli": "^5.5.3",
     "@mikro-orm/core": "^5.5.3",
+    "@mikro-orm/migrations": "^5.5.3",
     "@mikro-orm/nestjs": "^5.1.2",
     "@mikro-orm/postgresql": "^5.5.3",
     "@mikro-orm/reflection": "^5.5.3",
@@ -41,6 +43,8 @@
     "@nestjs/graphql": "^10.1.6",
     "@nestjs/platform-express": "^9.0.0",
     "apollo-server-express": "^3.11.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
     "graphql": "^16.6.0",
     "joi": "^17.7.0",
     "reflect-metadata": "^0.1.13",
@@ -97,5 +101,11 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/mikro-orm.config.ts"
+    ]
   }
 }
