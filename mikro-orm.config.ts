@@ -1,20 +1,17 @@
 import { Options } from '@mikro-orm/core';
-import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
-import * as path from 'path';
+import { ConfigService } from '@nestjs/config';
+
+const configService = new ConfigService();
 
 const mikroOrmConfig: Options = {
-  port: 5432,
-  user: 'suntech',
-  host: 'localhost',
+  entities: ['dist/**/*.entity.js'],
+  entitiesTs: ['src/**/*.entity.ts'],
   type: 'postgresql',
-  dbName: 'qualilab',
-  password: 'nk5alp@PPP@suntech@',
-  entities: ['./dist//*.entity.js'],
-  entitiesTs: ['./src//*.entity.ts'],
-  metadataProvider: TsMorphMetadataProvider,
-  migrations: {
-    path: path.resolve(__dirname, './src/migrations'),
-  },
+  dbName: configService.get('POSTGRES_DB'),
+  user: configService.get('POSTGRES_USER'),
+  password: configService.get('POSTGRES_PASSWORD'),
+  host: configService.get('POSTGRES_HOST'),
+  port: configService.get('POSTGRES_PORT'),
 };
 
 export default mikroOrmConfig;

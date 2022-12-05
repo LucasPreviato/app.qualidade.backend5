@@ -30,7 +30,9 @@
     "*.{js,ts}": "eslint --fix"
   },
   "dependencies": {
+    "@mikro-orm/cli": "^5.5.3",
     "@mikro-orm/core": "^5.5.3",
+    "@mikro-orm/migrations": "^5.5.3",
     "@mikro-orm/nestjs": "^5.1.2",
     "@mikro-orm/postgresql": "^5.5.3",
     "@mikro-orm/reflection": "^5.5.3",
@@ -97,5 +99,11 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/mikro-orm.config.ts"
+    ]
   }
 }
