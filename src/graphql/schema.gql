@@ -2,19 +2,34 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input CreateDepartmentInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
 input CreateUnitInput {
   email: String!
   name: String!
   phone: String!
 }
 
+type Department {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
 type Mutation {
+  createDepartment(createDepartmentInput: CreateDepartmentInput!): Department!
   createUnit(createUnitInput: CreateUnitInput!): Unit!
+  removeDepartment(id: Int!): Department!
   removeUnit(id: Int!): Unit!
+  updateDepartment(updateDepartmentInput: UpdateDepartmentInput!): Department!
   updateUnit(updateUnitInput: UpdateUnitInput!): Unit!
 }
 
 type Query {
+  department(id: Int!): Department!
+  departments: [Department!]!
   unit(id: Int!): Unit!
   units: [Unit!]!
 }
@@ -24,6 +39,12 @@ type Unit {
   id: Int!
   name: String!
   phone: String
+}
+
+input UpdateDepartmentInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
 }
 
 input UpdateUnitInput {
