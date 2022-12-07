@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateUnitInput } from './dto/create-unit.input';
 import { UpdateUnitInput } from './dto/update-unit.input';
 import { Unit } from './entities/unit.entity';
-import PostNotFoundException from './errors/not-found-exception';
+import PostNotFoundException from '../errors/not-found-exception';
 
 @Injectable()
 export class UnitsService {
