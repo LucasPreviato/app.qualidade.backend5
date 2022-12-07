@@ -3,8 +3,11 @@
 # ------------------------------------------------------
 
 input CreateDepartmentInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  description: String
+  email: String
+  initials: String!
+  name: String!
+  unitid: Int!
 }
 
 input CreateUnitInput {
@@ -13,9 +16,19 @@ input CreateUnitInput {
   phone: String!
 }
 
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
 type Department {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  createdAt: DateTime!
+  description: String
+  email: String
+  id: Int!
+  initials: String!
+  name: String!
+  unitid: Unit!
 }
 
 type Mutation {
@@ -42,9 +55,12 @@ type Unit {
 }
 
 input UpdateDepartmentInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  description: String
+  email: String
   id: Int!
+  initials: String
+  name: String
+  unitid: Int
 }
 
 input UpdateUnitInput {
