@@ -1,7 +1,16 @@
-import { InputType, Int, Field } from '@nestjs/graphql';
+import { InputType, Field, Int } from '@nestjs/graphql';
+import { Unit } from './../../units/entities/unit.entity';
 
 @InputType()
 export class CreateDepartmentInput {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
-  exampleField: number;
+  @Field()
+  name: string;
+  @Field({ nullable: true })
+  description?: string;
+  @Field({ nullable: true })
+  email?: string;
+  @Field()
+  initials: string;
+  @Field(() => Int)
+  unitid: number;
 }
